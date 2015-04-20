@@ -13,6 +13,7 @@ var gather = {
     isDevelop:false, //是否开发环境
     // DOM Elements that could be track when click .
     event_item:['a','button','body'], // 可能被事件跟踪的
+    /* Track current page. */
     init:function() {
         this.isDevelop = this._checkDevelop();
         if(this.isDevelop || !this._checkIsGatherDefined() || !this._checkIsGatherAbled()){
@@ -25,6 +26,7 @@ var gather = {
         img.src = gather.url+gather.url_param;
         img.style.display="none";
     },
+    // Add event listeners.
     event:function(){
     	var event_item = this.event_item;
     	for(var i=0; i< event_item.length;i++)
@@ -33,6 +35,7 @@ var gather = {
     	}
     },
     // 立即触发请求
+    // TODO
     event_now:function(obj){
 
         var self = this;
