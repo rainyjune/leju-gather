@@ -71,6 +71,7 @@ var gather = {
 		    img.src = 'http://' + config.host_name + '/?site=gather&ctl=gather&act=event&' + url_param;
 		    img.style.display="none";
     },
+    // Add click event handler for each element.
     _fetchevent_item:function(item){
         // 增加 body上的统计 by tiantian 2014/9/11
         if(item === "body"){
@@ -169,6 +170,7 @@ var gather = {
 		    img.style.display="none";
 	    };
     },
+    // Return query string used in page tracking.
     get_param:function() {
         /*
         *读config.gather_param赋值
@@ -219,6 +221,7 @@ var gather = {
             return false;
         }
     },
+    // Get URL arguments.
     querySt:function(ji) {
         hu = window.location.search.substring(1);
         gy = hu.split("&");
@@ -230,60 +233,72 @@ var gather = {
         }
         return '';
     },
+    // Get UID
     _getUid:function(){
         if ( typeof(uid)!= "undefined" ){
             return trim(uid);
         }
         return "";
     },
+    // Get longitude
     _getLon:function(){
         if ( typeof(lon)!= "undefined" ){
             return trim(lon);
         }
         return "";
     },
+    // Get latitude
     _getLat:function(){
         if ( typeof(lat)!= "undefined" ){
             return trim(lat);
         }
         return "";
     },
+    // Get document domain
     _getDomain:function(){
         return this.d.domain;
     },
+    // Get document URL
     _getCurUrl:function(){
         return this.d.location.href;
     },
+    // Get Referer
     _getReferer:function(){
         return this.d.referrer;
     },
+    // Get city
     _getCity:function(){
         if ( typeof(city)!= "undefined" ){
             return trim(city);
         }
         return "";
     },
+    // Get level1_page
     _getLevel1page:function(){
         if ( typeof(level1_page)!= "undefined" ){
             return trim(level1_page);
         }
         return "";
     },
+    // Get level2_page
     _getLevel2page:function(){
         if ( typeof(level2_page)!= "undefined" ){
             return trim(level2_page);
         }
         return "";
     },
+    // Get custom_id
     _getCustom_id:function(){
     	if ( typeof(custom_id)!= "undefined" ){
             return trim(custom_id);
         }
         return "";
     },
+    // Get device screen size
     _getScreen:function(){
         return [screen.height,screen.width];
     },
+    // Get browser name
     _getBrowser:function(){
         var useragent=navigator.userAgent;
         if(useragent.indexOf('Chrome') > 0)
@@ -325,14 +340,17 @@ var gather = {
         }
 
     },
+    // Get user agent string.
     _getUseragent:function(){
         var useragent=navigator.userAgent;
         return useragent;
     },
+    // Get the source query parameter.
     _getSource:function(){
     	var source = this.querySt("source");
     	return source;
     },
+    // Is this a registered user?
     _getIsRegister:function(){
     	var mid = GetCookie('mid');
     	if(mid){
@@ -342,6 +360,7 @@ var gather = {
     	}
     	return source;
     },
+    // Which platform is our web page running on ?
     _getWebtype:function(){
     	var url = this.d.location.href;
     	if(url.indexOf('/wap/') > 0 || url.indexOf('site=wap') > 0)
@@ -366,12 +385,14 @@ var gather = {
     	}
     	return 'weixin';
     },
+    // Get location_city
     _getLocationcity:function(){
     	if ( typeof(location_city)!= "undefined" ){
             return trim(location_city);
         }
         return "";
     },
+    // Get OS name.
     _getOs:function(){
         var useragent=navigator.userAgent;
         if(useragent.indexOf('Mac OS') > 0)
@@ -394,6 +415,7 @@ var gather = {
         	return 'other';
         }
     },
+    // Get spider name.
     _getSpider:function()
     {
     	 var useragent=navigator.userAgent.toLowerCase();
@@ -424,6 +446,7 @@ var gather = {
         }
         return false;
     },
+    // Check whether this script loaded or not.
     _checkIsGatherDefined:function(){//判断是否引用过gather.js
         if( typeof(window.isGatherDefined) == "undefined" ){
             return true;
