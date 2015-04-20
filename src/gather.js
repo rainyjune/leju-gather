@@ -1,11 +1,17 @@
 //- 统计代码主体，定义各种信息获取方法 -/
 var gather = {
+    // Current document URL.
     url:'',
+    // Document
     d:document,
+    // Query string used in page tracking.
     url_param:'',
     /* 记录是否已经增加utm_param_res=link */
+    /* Not in use */
     utmMark:0,
+    // Is develop mode ?
     isDevelop:false, //是否开发环境
+    // DOM Elements that could be track when click .
     event_item:['a','button','body'], // 可能被事件跟踪的
     init:function() {
         this.isDevelop = this._checkDevelop();
