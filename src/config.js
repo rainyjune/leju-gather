@@ -6,9 +6,26 @@ var config = {
     // The analytic server host name list.
     permit_domain:['tongji.leju.com','tongji.dev.leju.com'],
     // Parameters used in page tracking.
-    gather_param:{'uid':'','uuid':'', 'host':'', 'url':'', 'referer_url':'', 'screen_height':'', 'screen_width':'', 'brower':'',
-                  'user_agent':'','city':'','source':'','os':'','spider_type':'',
-                  'level1_page':'','level2_page':'','custom_id':'','webtype':'','is_register':''},
+    gather_param:{
+      'uid':'', // Yep
+      'uuid':'', // Nope
+      'host':'', // Yep
+      'url':'', // Yep
+      'referer_url':'', // Yep
+      'screen_height':'', // Yep
+      'screen_width':'', // Yep
+      'brower':'', // Yep
+      'user_agent':'', // Yep
+      'city':'', // Yep
+      'source':'', // Yep
+      'os':'', // Yep
+      'spider_type':'', // Yep
+      'level1_page':'', // Yep
+      'level2_page':'', // Yep
+      'custom_id':'', // Yep
+      'webtype':'', // Yep
+      'is_register':'' // Nope
+    },
     // Parameters used in event tracking.
     gather_event_param:{'event':'','event_name':'','city':'','weixin_house_id':'','level1_page':'','level2_page':'','source':'',
     					'param1':'','param2':'','param3':'','param4':'','webtype':''},
