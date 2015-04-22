@@ -35,7 +35,7 @@ var gather = {
     	}
     },
     // 立即触发请求
-    // TODO
+    // Event tracking.
     event_now:function(obj){
 
         var self = this;
