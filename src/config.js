@@ -27,8 +27,20 @@ var config = {
       'is_register':'' // Nope
     },
     // Parameters used in event tracking.
-    gather_event_param:{'event':'','event_name':'','city':'','weixin_house_id':'','level1_page':'','level2_page':'','source':'',
-    					'param1':'','param2':'','param3':'','param4':'','webtype':''},
+    gather_event_param:{
+      'event':'',
+      'event_name':'',
+      'city':'',
+      'weixin_house_id':'',
+      'level1_page':'',
+      'level2_page':'',
+      'source':'',
+    	'param1':'',
+      'param2':'',
+      'param3':'',
+      'param4':'',
+      'webtype':''
+    },
     init:function() {
         // Set current analytic server host name, defaults to tongji.leju.com
         if(config.host_name == '') {
